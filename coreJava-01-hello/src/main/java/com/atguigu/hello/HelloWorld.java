@@ -8,7 +8,9 @@ package com.atguigu.hello;
  */
 public class HelloWorld {
 
-
+    /*
+     * 这是多行注释
+     */
     public static void main(String[] args) {
         // 这是一个单行注释
         System.out.println("Hello World");

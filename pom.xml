@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>coreJava-01-hello</module>
+        <module>coreJava-02-variOperator</module>
     </modules>
 
     <properties>
