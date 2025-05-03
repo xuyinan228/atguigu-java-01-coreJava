@@ -27,5 +27,13 @@ public class AriOperatorTest {
         int b2 = a2++;
         System.out.println("a2 = " + a2);
         System.out.println("b2 = " + b2);
+
+        int i = 10;
+        i = i++;
+        System.out.println("i = " + i);
+
+        i = 10;
+        i = ++i;
+        System.out.println("i = " + i);
     }
 }
