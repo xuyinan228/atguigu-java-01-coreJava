@@ -11,6 +11,9 @@
     <modules>
         <module>coreJava-01-hello</module>
         <module>coreJava-02-variOperator</module>
+        <module>coreJava-03-flowControl</module>
+        <module>coreJava-04-array</module>
+        <module>coreJava-05-oop</module>
     </modules>
 
     <properties>
