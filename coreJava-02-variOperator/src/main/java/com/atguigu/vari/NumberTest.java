@@ -1,4 +1,4 @@
-package com.atguigu.varioper;
+package com.atguigu.vari;
 
 /**
  * 整型测试

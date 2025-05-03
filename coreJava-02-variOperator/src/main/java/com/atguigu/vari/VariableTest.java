@@ -1,4 +1,4 @@
-package com.atguigu.varioper;
+package com.atguigu.vari;
 
 public class VariableTest {
     public static void main(String[] args) {

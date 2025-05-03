@@ -1,4 +1,4 @@
-package com.atguigu.varioper;
+package com.atguigu.vari;
 
 public class FloatTest {
     public static void main(String[] args) {
