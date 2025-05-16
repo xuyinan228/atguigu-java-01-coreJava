@@ -14,6 +14,8 @@
         <module>coreJava-03-flowControl</module>
         <module>coreJava-04-array</module>
         <module>coreJava-05-oop</module>
+        <module>coreJava-06-exception</module>
+        <module>coreJava-07-thread</module>
     </modules>
 
     <properties>
