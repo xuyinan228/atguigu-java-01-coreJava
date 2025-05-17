@@ -16,6 +16,8 @@
         <module>coreJava-05-oop</module>
         <module>coreJava-06-exception</module>
         <module>coreJava-07-thread</module>
+        <module>coreJava-08-commonClazz</module>
+        <module>coreJava-09-collection</module>
     </modules>
 
     <properties>
