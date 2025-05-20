@@ -1,4 +1,4 @@
-package com.atguigu.oop.senior._interface;
+package com.atguigu.oop.senior._interface.introduce;
 
 public interface Flyable {
     int MIN_SPEED = 0;

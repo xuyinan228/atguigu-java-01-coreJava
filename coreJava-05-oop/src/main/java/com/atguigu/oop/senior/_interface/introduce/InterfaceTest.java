@@ -1,4 +1,4 @@
-package com.atguigu.oop.senior._interface;
+package com.atguigu.oop.senior._interface.introduce;
 
 public class InterfaceTest {
     public static void main(String[] args) {
