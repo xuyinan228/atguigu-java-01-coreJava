@@ -1,4 +1,4 @@
-package com.atguigu.trycatchfinally;
+package com.atguigu.exception.trycatchfinally;
 
 public class FinallyTest {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.atguigu._throws;
+package com.atguigu.exception._throws;
 
 import java.io.File;
 import java.io.FileInputStream;

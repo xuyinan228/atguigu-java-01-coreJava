@@ -1,4 +1,4 @@
-package com.atguigu.trycatchfinally;
+package com.atguigu.exception.trycatchfinally;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

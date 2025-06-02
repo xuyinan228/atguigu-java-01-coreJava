@@ -1,4 +1,4 @@
-package com.atguigu._throw;
+package com.atguigu.exception._throw;
 
 public class ThrowTest {
     public static void main(String[] args) {
