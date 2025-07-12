@@ -18,9 +18,10 @@
         <module>coreJava-07-thread</module>
         <module>coreJava-08-commonClazz</module>
         <module>coreJava-09-collection</module>
-        <module>coreJava-10-io</module>
-        <module>coreJava-11-net</module>
-        <module>coreJava-12-reflect</module>
+        <module>coreJava-11-io</module>
+        <module>coreJava-12-net</module>
+        <module>coreJava-13-reflect</module>
+        <module>coreJava-10-generic</module>
     </modules>
 
     <properties>
