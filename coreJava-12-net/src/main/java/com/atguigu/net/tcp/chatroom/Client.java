@@ -5,6 +5,7 @@ import com.atguigu.net.IOUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -18,7 +19,10 @@ public class Client {
             new Receive(socket).start();
 
             // 一个线程负责发送自己的话
-            new Send(socket).start();
+            Send send = new Send(socket);
+            send.start();
+
+            send.join();
         }catch (Exception e){
             e.printStackTrace();
         }finally {
@@ -28,7 +32,7 @@ public class Client {
 }
 
 class Send extends Thread{
-    private Socket socket;
+    private final Socket socket;
 
     public Send(Socket socket){
         this.socket = socket;
@@ -36,32 +40,34 @@ class Send extends Thread{
 
     @Override
     public void run() {
-        Scanner scanner = new Scanner(System.in);
-        while (true){
-            System.out.println("请输入你想说的：");
-            String msg = scanner.nextLine();
-
-            sendMessage(msg, socket);
-        }
-    }
-
-    private void sendMessage(String msg, Socket socket) {
-        OutputStream ops = null;
+        PrintStream ps = null;
+        OutputStream os = null;
+        Scanner console = null;
         try {
-            ops = socket.getOutputStream();
-            ops.write(msg.getBytes());
-            ops.flush();
-            socket.shutdownOutput();
-        }catch (Exception e){
+            os = socket.getOutputStream();
+            ps = new PrintStream(os);
+
+            console = new Scanner(System.in);
+
+            while (true) {
+                System.out.print("请输入你想说的：");
+                String msg = console.nextLine();
+                if (msg.equals("bye")) {
+                    break;
+                }
+
+                ps.println(msg);
+            }
+        }catch (Exception e) {
             e.printStackTrace();
         }finally {
-            IOUtils.close(ops);
+            IOUtils.close(console, ps, os);
         }
     }
 }
 
 class Receive extends Thread{
-    private Socket socket;
+    private final Socket socket;
 
     public Receive(Socket socket){
         this.socket = socket;
@@ -69,20 +75,19 @@ class Receive extends Thread{
 
     @Override
     public void run() {
-        while (true) {
-            readSocketInput();
-        }
-    }
-
-    private void readSocketInput() {
         InputStream ips = null;
+        Scanner scanner = null;
         try {
             ips = socket.getInputStream();
-            System.out.println( IOUtils.read(ips) );
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            scanner = new Scanner(ips);
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                System.out.println(line);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }finally {
-            IOUtils.close(ips);
+            IOUtils.close(scanner, ips);
         }
     }
 }
